@@ -57,7 +57,7 @@ getFullName() {
 
 class Teacher extends Person{
 constructor(firstName, lastName, subject) {
-  super(firstName, lastName, this.occupation);
+  super(firstName, lastName);
   this.subject = subject
 }
 
@@ -67,7 +67,7 @@ getSubject() {
 }
 
 // ExmLES 
-const teacher = new Teacher("Gonzalo", "R", "Teacher", "JavaScript");
+const teacher = new Teacher("Gonzalo", "R", "JavaScript");
 teacher.addHobby("collecting shoes");
 teacher.addHobby("building legos");
 
