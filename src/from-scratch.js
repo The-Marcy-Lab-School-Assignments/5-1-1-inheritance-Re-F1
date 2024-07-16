@@ -21,28 +21,59 @@ getArea(){
 }
 }
 
-class Square extends Quadrilateral{
+class Square extends Rectangle{
  constructor(side){
-  super(side, side, side, side)
+  super(side, side)
  }
-
- getPerimeter() {
-  return 4 * this.side1;
-}
-
-getArea() {
-  return this.side1 * this.side1;
-}
 
 getDiagonal() {
   return Math.sqrt(2) * this.side1;
 }
 }
 
+
 /* Be creative with this one! */
 class Person {
-
+  #hobbies
+constructor(firstName, lastName, occupation) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.occupation = occupation;
+  this.#hobbies = []
 }
+
+getHobbies(){
+  return this.#hobbies
+}
+
+addHobby(hobby) {
+  this.#hobbies.push(hobby); // Add a new hobby to the hobbies array
+}
+
+getFullName() {
+  return `Name: ${this.firstName} ${this.lastName}`
+}
+}
+
+class Teacher extends Person{
+constructor(firstName, lastName, subject) {
+  super(firstName, lastName, this.occupation);
+  this.subject = subject
+}
+
+getSubject() {
+  return this.subject
+}
+}
+
+// ExmLES 
+const teacher = new Teacher("Gonzalo", "R", "Teacher", "JavaScript");
+teacher.addHobby("collecting shoes");
+teacher.addHobby("building legos");
+
+console.log(teacher.getFullName()); // Output: Name: Gonzalo R.
+console.log(teacher.getHobbies());  // Output: ["collecting shoes", "building legos"]
+console.log(teacher.getSubject());  // Output: JavaScript
 
 module.exports = {
   Quadrilateral,
